@@ -1,38 +1,58 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body{
+  font-family: 'Baloo Bhai 2' , cursive;
+  background-color: var(--green);
+}
+:root {
+  --green:#cbe7fd ;
+  /* --green:#000000 ; */
+  --purple: #510069;
+  --pink:#F694C1;
+  --yellow: #EDE7B1;
+  --blue:  #546de5;
+}
+
+.App{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 50rem;
+  margin: auto;
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  
+  .card{
+    border: 5px solid var(--blue);
+    border-radius: 5px;
+    background-color: var(--blue);
+    transition: all .5s;
+    cursor: pointer;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .card:hover{
+    border-color: var(--pink);
   }
-  to {
-    transform: rotate(360deg);
+  .content{
+    visibility: hidden;
   }
-}
+
+  .flipped{
+    background-color: transparent;
+  }
+  .flipped > .content{
+    visibility: visible;
+  }
+
+  .main-title{
+    color: var(--purple);
+  }
+
+  .card.flipped{
+    transform: rotateY(180deg)
+  }
+  .scorecard{
+    color: var(--pink);
+  }
